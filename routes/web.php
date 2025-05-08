@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaginaController;
+use App\Http\Controllers\cursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\PaginaController;
+// Route::resource('cursos', cursoController::class);
+
 
 Route::get('/inicio', [PaginaController::class, 'inicio']);
 Route::get('/servicios', [PaginaController::class, 'servicios']);

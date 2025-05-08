@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UsuarioController;
 use App\Http\Controllers\Api\ProductoController;
+use App\Http\Controllers\cursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\Api\ProductoController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::resource('cursos', cursoController::class);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -27,3 +30,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/usuarios', [UsuarioController::class, 'store']);
 // Route::put('/usuarios/{id}', [UsuarioController::class, 'update']);
 // Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
+
